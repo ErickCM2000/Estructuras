@@ -20,7 +20,6 @@ int main(void){
 	insertar(&milista);
 	insertar(&milista);
 	insertar(&milista);
-	insertar(&milista);
 
 	printf("------------------------\n");
 
