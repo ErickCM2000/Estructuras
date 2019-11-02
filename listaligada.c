@@ -11,7 +11,11 @@ void mostrar(struct nodo *milista);
 
 int main(int argc, char const *argv[]) {
 
-  struct nodo *milista = NULL;
+  struct nodo *milista;
+
+	milista = malloc(sizeof(struct nodo));
+	milista -> dato = 3;
+	milista -> siguiente = NULL;
 
   insertar(&milista, 10);
   insertar(&milista, 20);
@@ -26,16 +30,23 @@ int main(int argc, char const *argv[]) {
 
 void insertar(struct nodo **milista, int x){
 
-  struct nodo *nodotemporal = (struct nodo*) malloc(sizeof(struct nodo));
+  struct nodo *nodotemporal = malloc(sizeof(struct nodo));
   struct nodo *ultimo = *milista;
 
   nodotemporal -> dato = x;
   nodotemporal -> siguiente = NULL;
 
+	// Sí la lista no cuenta con ningún nodo, se creará el primero.
   if (*milista == NULL) {
 	   *milista = nodotemporal;
 	return;
 }
+
+	/*while(milista -> siguiente != NULL){
+		milista = milista -> siguiente;
+	}
+
+	milista = nodotemporal;*/
 
   while (ultimo -> siguiente != NULL){
 		ultimo = ultimo -> siguiente;
