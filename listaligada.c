@@ -1,80 +1,55 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "stdio.h"
+#include "stdlib.h"
 
-void insertar();
-void mostrar();
-struct Lista eliminar();
-
-struct Lista{
-
-	int dato;
-	struct Lista *siguiente;
+struct nodo{
+  int dato;
+  struct nodo *siguiente;
 };
 
-int main(void){
+void insertar(struct nodo **milista, int x);
+void mostrar(struct nodo *milista);
 
-	struct Lista* milista=NULL;
+int main(int argc, char const *argv[]) {
 
-	insertar(&milista);
-	insertar(&milista);
-	insertar(&milista);
-	insertar(&milista);
+  struct nodo *milista = NULL;
 
-	printf("------------------------\n");
+  insertar(&milista, 10);
+  insertar(&milista, 20);
+  insertar(&milista, 30);
+  insertar(&milista, 40);
+  insertar(&milista, 50);
 
-	*milista = eliminar(milista);
-	*milista = eliminar(milista);
+  mostrar(milista);
 
-	printf("------------------------\n");
-
-	mostrar(milista);
+  return 0;
 }
 
-void insertar(struct Lista **l){
+void insertar(struct nodo **milista, int x){
 
-	struct Lista* nuevo = malloc(sizeof(struct Lista));
-	scanf("\n%d", &nuevo->dato);
-	nuevo->siguiente = *l;
-	*l = nuevo;
+  struct nodo *nodotemporal = (struct nodo*) malloc(sizeof(struct nodo));
+  struct nodo *ultimo = *milista;
+
+  nodotemporal -> dato = x;
+  nodotemporal -> siguiente = NULL;
+
+  if (*milista == NULL) {
+	   *milista = nodotemporal;
+	return;
 }
 
-void mostrar(struct Lista *l){
+  while (ultimo -> siguiente != NULL){
+		ultimo = ultimo -> siguiente;
+  }
 
-	while(l != NULL){
+  ultimo -> siguiente = nodotemporal;
 
-		printf("%d\n", l->dato);
-
-		l = l->siguiente;
-	}
 }
 
-struct Lista eliminar(struct Lista *l){
+void mostrar(struct nodo *milista){
 
-	struct Lista* a;
-	struct Lista* b = l;
-	int p=0;
+  while (milista != NULL) {
+    printf("%d\n", milista -> dato);
+    milista = milista -> siguiente;
+  }
 
-	int numaelim;
-
-	scanf("\n%d", &numaelim);
-
-	while(l->dato != numaelim){
-
-		a = l;
-		l = l->siguiente;
-
-		p++;
-	}
-
-	if (p == 0)
-	{
-
-		l = l->siguiente;
-		return *l;
-	}else{
-		a->siguiente = l->siguiente;
-		free(l);
-		return *b;
-	}
 }
