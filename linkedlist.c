@@ -13,8 +13,11 @@ int main(int argc, char const *argv[]) {
 
   struct nodo *milista = NULL;
 
-  insertar(&milista, 34);
-
+  insertar(&milista, 10);
+  insertar(&milista, 20);
+  insertar(&milista, 30);
+  insertar(&milista, 40);
+  insertar(&milista, 50);
 
   mostrar(milista);
 
@@ -22,34 +25,31 @@ int main(int argc, char const *argv[]) {
 }
 
 void insertar(struct nodo **milista, int x){
-  // si la lista no tiene ningun nodo, creará el primero  x->NULL
-  if (milista == NULL){
 
-    struct nodo *milista = malloc(sizeof(struct nodo));
-    if (milista == NULL){
-      printf("no hay memoria suficiente\n");
-    } else {
-      milista -> dato = x;
-      milista -> siguiente == NULL;
-    }
+  struct nodo *nodotemporal = (struct nodo*) malloc(sizeof(struct nodo));
+  struct nodo *ultimo = *milista;
 
-  } else { // si ya existe la lista, creará un nodo más.  x->x'->NULL
+  nodotemporal -> dato = x;
+  nodotemporal -> siguiente = NULL;
 
-    struct nodo *milista = malloc(sizeof(struct nodo));
-    if(milista == NULL){
-      printf("no hay memoria suficiente\n");
-    } else {
-      milista -> siguiente -> dato = x;
-      milista -> siguiente -> siguiente == NULL;
-    }
+  if (*milista == NULL) {
+	   *milista = nodotemporal;
+	return;
+}
 
+  while (ultimo -> siguiente != NULL){
+		ultimo = ultimo -> siguiente;
   }
+
+  ultimo -> siguiente = nodotemporal;
 
 }
 
 void mostrar(struct nodo *milista){
 
-    printf("%d\n",milista -> dato);
-
+  while (milista != NULL) {
+    printf("%d\n", milista -> dato);
+    milista = milista -> siguiente;
+  }
 
 }
