@@ -1,3 +1,4 @@
+//código de Erick
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,15 +24,20 @@ int main(void){
 
 	printf("------------------------\n");
 
-	*milista = eliminar(milista);
-	*milista = eliminar(milista);
-
+	//*milista = eliminar(milista);
+//*milista = eliminar(milista);
+	//funciona más como una pila
 	printf("------------------------\n");
 
 	mostrar(milista);
 }
 
 void insertar(struct Lista **l){
+
+	if(*l == NULL){ // razón por la cual no funcionaba
+		*l = malloc(sizeof(struct Lista));
+		return;
+	}
 
 	struct Lista* nuevo = malloc(sizeof(struct Lista));
 	scanf("\n%d", &nuevo->dato);

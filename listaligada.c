@@ -8,6 +8,7 @@ struct nodo{
 
 void insertar(struct nodo **milista, int x);
 void mostrar(struct nodo *milista);
+//void eliminar(struct nodo, int ) eliminar el último o una posición dada.
 
 int main(int argc, char const *argv[]) {
 
@@ -42,14 +43,14 @@ void insertar(struct nodo **milista, int x){
 	return;
 }
 
-	/*while(milista -> siguiente != NULL){
-		milista = milista -> siguiente;
+	/*while(*(milista -> siguiente) != NULL){
+		**milista = *(milista -> siguiente);
 	}
-
-	milista = nodotemporal;*/
+    //Preguntar por qué no funciona
+	*milista = nodotemporal;*/
 
   while (ultimo -> siguiente != NULL){
-		ultimo = ultimo -> siguiente;
+		ultimo = ultimo -> siguiente; // el bueno
   }
 
   ultimo -> siguiente = nodotemporal;
