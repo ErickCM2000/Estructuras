@@ -7,27 +7,35 @@ struct nodo{
   struct nodo *derecho;
 };
 
-void insertar(struct nodo **arbol, int num);
+void insertar(struct nodo **miarbol, int num);
 
 int main(int argc, char const *argv[]) {
 
-  struct nodo *arbol = NULL;
-  arbol = malloc(sizeof(struct nodo));
+  struct nodo *miarbol = NULL;
+  miarbol = malloc(sizeof(struct nodo));
 
-  insertar(&arbol);
+  insertar(&miarbol);
   return 0;
 }
 
-void insertar(struct nodo **arbol, int num){
+void insertar(struct nodo **miarbol, int num){
 
-  if(*arbol == NULL){
-    *arbol = malloc(sizeof(struct nodo));
+  if(*miarbol == NULL){
+
+    *miarbol = malloc(sizeof(struct nodo));
     return;
+
   } else {
-    struct nodo *nodotemporal = malloc(sizeof(struct nodo));
-    nodotemporal -> dato = num;
-    nodotemporal -> izquierdo = NULL;
-    nodotemporal -> derecho = NULL;
+
+    struct nodo *temporal = malloc(sizeof(struct nodo));
+    temporal -> dato = num;
+    temporal -> izquierdo = NULL;
+    temporal -> derecho = NULL;
+
+    struct nodo *ultimo = *miarbol;
+    if(miarbol -> )
+
+
   }
 }
 

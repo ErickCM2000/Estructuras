@@ -45,7 +45,6 @@ void push(struct nodo **pila, int num){
 
 }
 
-
 void mostrar(struct nodo *pila){
   while(pila != NULL){
     printf("%d\n", pila -> dato);
