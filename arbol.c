@@ -1,24 +1,34 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-struct arbol{
+struct nodo{
   int dato;
-  struct arbol *izquierdo;
-  struct arbol *derecho;
+  struct nodo *izquierdo;
+  struct nodo *derecho;
 };
 
-void insertar(struct arbol *tree, int num);
+void insertar(struct nodo **arbol, int num);
 
 int main(int argc, char const *argv[]) {
 
-  struct arbol *tree = NULL;
-  tree = malloc(sizeof(struct arbol));
+  struct nodo *arbol = NULL;
+  arbol = malloc(sizeof(struct nodo));
 
+  insertar(&arbol);
   return 0;
 }
 
-void insertar(struct arbol *tree, int num){
+void insertar(struct nodo **arbol, int num){
 
+  if(*arbol == NULL){
+    *arbol = malloc(sizeof(struct nodo));
+    return;
+  } else {
+    struct nodo *nodotemporal = malloc(sizeof(struct nodo));
+    nodotemporal -> dato = num;
+    nodotemporal -> izquierdo = NULL;
+    nodotemporal -> derecho = NULL;
+  }
 }
 
 

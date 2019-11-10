@@ -32,17 +32,17 @@ int main(int argc, char const *argv[]) {
 
 void insertar(struct nodo **milista, int x){
 
-  struct nodo *nodotemporal = malloc(sizeof(struct nodo));
-  struct nodo *ultimo = *milista;
-
-  nodotemporal -> dato = x;
-  nodotemporal -> siguiente = NULL;
-
 	// Sí la lista no cuenta con ningún nodo, se creará el primero.
   if (*milista == NULL) {
 	   *milista = nodotemporal;
 	return;
 }
+
+struct nodo *nodotemporal = malloc(sizeof(struct nodo));
+struct nodo *ultimo = *milista;
+
+nodotemporal -> dato = x;
+nodotemporal -> siguiente = NULL;
 
 	/*while(*(milista -> siguiente) != NULL){
 		**milista = *(milista -> siguiente);
