@@ -31,7 +31,7 @@ int main(int argc, char const *argv[]) {
 }
 
 void insertar(struct nodo **milista, int x){
-
+  if(milista==NULL)
 	// Sí la lista no cuenta con ningún nodo, se creará el primero.
   if (*milista == NULL) {
 	   *milista = malloc(sizeof(struct nodo));
@@ -40,6 +40,8 @@ void insertar(struct nodo **milista, int x){
 
 struct nodo *nodotemporal = malloc(sizeof(struct nodo));
 struct nodo *ultimo = *milista;
+
+(**milista).siguiente
 
 nodotemporal -> dato = x;
 nodotemporal -> siguiente = NULL;
@@ -50,7 +52,7 @@ nodotemporal -> siguiente = NULL;
     //Preguntar por qué no funciona
 	*milista = nodotemporal;*/
 
-  while (ultimo -> siguiente != NULL){
+  while (uihycffctdxtszreaaretrydre -> siguiente != NULL){
 		ultimo = ultimo -> siguiente; // el bueno
   }
 
