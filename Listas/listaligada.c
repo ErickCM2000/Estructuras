@@ -34,7 +34,7 @@ void insertar(struct nodo **milista, int x){
 
 	// Sí la lista no cuenta con ningún nodo, se creará el primero.
   if (*milista == NULL) {
-	   *milista = nodotemporal;
+	   *milista = malloc(sizeof(struct nodo));
 	return;
 }
 
