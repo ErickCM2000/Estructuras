@@ -6,7 +6,7 @@ struct nodo{
   struct nodo *siguiente;
 };
 
-void insertar_al_final(struct nodo **milista, int num);
+void insertar_al_principio(struct nodo **milista, int num);
 void mostrar(struct nodo *milista);
 void insertar_al_final(struct nodo **lista, int num);
 int numero_elementos(struct nodo *milista);
@@ -30,7 +30,7 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 
-void insertar_al_final(struct nodo **milista, int num){
+void insertar_al_principio(struct nodo **milista, int num){
 
   struct nodo *nodotemporal = malloc(sizeof(struct nodo));
   struct nodo *ultimo = *milista;
@@ -63,17 +63,18 @@ void mostrar(struct nodo *milista){
 
 }
 
-void insertar_al_final(struct nodo **lista, int num){
+void insertar_al_final(struct nodo **milista, int num){
+
+  struct nodo *temporal = malloc(sizeof(struct nodo));
+  temporal -> dato = num;
+  temporal -> siguiente = *milista;
 
   if (*milista == NULL) {
-    *milista = nodotemporal;
+    *milista = temporal;
 	return;
   } else {
 
-    struct nodo *temporal = malloc(sizeof(struct nodo));
-    temporal -> dato = num;
-    temporal -> siguiente = *lista;
-    *lista = temporal;
+    *milista = temporal;
 
   }
 
