@@ -8,13 +8,13 @@ struct nodo{
 
 void insertar_al_final(struct nodo **milista, int num);
 void mostrar(struct nodo *milista);
-void insertar_alprincipio(struct nodo **lista, int num);
+void insertar_al_final(struct nodo **lista, int num);
 int numero_elementos(struct nodo *milista);
-//void eliminar(struct nodo, int ) eliminar el último o una posición dada.
+void eliminar_al_final
 
 int main(int argc, char const *argv[]) {
 
-  struct nodo *milista = NULL;
+  struct nodo *milista;
 
   insertar_al_final(&milista, 10);
   insertar_al_final(&milista, 20);
@@ -22,7 +22,7 @@ int main(int argc, char const *argv[]) {
   insertar_al_final(&milista, 40);
   insertar_al_final(&milista, 50);
 
-  insertar_alprincipio(&milista, 60);
+  insertar_al_final(&milista, 60);
 
   mostrar(milista);
 
@@ -64,7 +64,7 @@ void mostrar(struct nodo *milista){
 
 }
 
-void insertar_alprincipio(struct nodo **lista, int num){
+void insertar_al_final(struct nodo **lista, int num){
 
   if(*lista == NULL){ //si la lista no cuenta con ningún nodo, se creará el primero.
     *lista = malloc(sizeof(struct nodo));
