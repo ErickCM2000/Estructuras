@@ -6,49 +6,53 @@ struct nodo{
   struct nodo *siguiente;
 };
 
-void insertar(struct nodo **mipila, int x);
-void mostrar(struct nodo *mipila);
-void insertar_alprincipio(struct nodo **mipila, int num);
-//void eliminar(struct nodo, int ) eliminar el último o una posición dada.
+void insertar(struct nodo **mcola, int x);
+void mostrar(struct nodo *mcola);
+void insertar_alprincipio(struct nodo **mcola, int num);
+void esta_vacia(struct nodo *mcola);
 
 int main(int argc, char const *argv[]) {
 
-  struct nodo *mipila;
+  struct nodo *mcola = NULL;
 
-	mipila = malloc(sizeof(struct nodo));
-	mipila -> dato = 3;
-	mipila -> siguiente = NULL;
+  esta_vacia(mcola);
 
-  insertar(&mipila, 10);
-  insertar(&mipila, 20);
-  insertar(&mipila, 30);
-  insertar(&mipila, 40);
-  insertar(&mipila, 50);
-
-  mostrar(mipila);
+	mcola = malloc(sizeof(struct nodo));
+	mcola -> dato = 3;
+	mcola -> siguiente = NULL;
+  insertar(&mcola, 10);
+  insertar(&mcola, 20);
+  insertar(&mcola, 30);
+  insertar(&mcola, 40);
+  insertar(&mcola, 50);
+  mostrar(mcola);
 
   return 0;
 }
 
-void insertar(struct nodo **mipila, int x){
+void esta_vacia(struct nodo *mcola){
+  if(mcola == NULL){
+    printf("\nLa cola esta vacia.");
+    printf("\n");
+  } else {
+    printf("\nLa cola no esta vacia.");
+    printf("\n");
+  }
+}
 
-	// Sí la pila no cuenta con ningún nodo, se creará el primero.
-  if (*mipila == NULL) {
-	   *mipila = nodotemporal;
+void insertar(struct nodo **mcola, int x){
+
+	// Sí la cola no cuenta con ningún nodo, se creará el primero.
+  if (*mcola == NULL) {
+	   *mcola = malloc(sizeof(struct nodo));
 	return;
 }
 
 struct nodo *nodotemporal = malloc(sizeof(struct nodo));
-struct nodo *ultimo = *mipila;
+struct nodo *ultimo = *mcola;
 
 nodotemporal -> dato = x;
 nodotemporal -> siguiente = NULL;
-
-	/*while(*(mipila -> siguiente) != NULL){
-		**mipila = *(mipila -> siguiente);
-	}
-    //Preguntar por qué no funciona
-	*mipila = nodotemporal;*/
 
   while (ultimo -> siguiente != NULL){
 		ultimo = ultimo -> siguiente; // el bueno
@@ -58,26 +62,26 @@ nodotemporal -> siguiente = NULL;
 
 }
 
-void mostrar(struct nodo *mipila){
+void mostrar(struct nodo *mcola){
 
-  while (mipila != NULL) {
-    printf("%d\n", mipila -> dato);
-    mipila = mipila -> siguiente;
+  while (mcola != NULL) {
+    printf("%d\n", mcola -> dato);
+    mcola = mcola -> siguiente;
   }
 
 }
 
-void insertar_alprincipio(struct nodo **mipila, int num){
+void insertar_alprincipio(struct nodo **mcola, int num){
 
-  if(*mipila == NULL){ //si la mipila no cuenta con ningún nodo, se creará el primero.
-    *mipila = malloc(sizeof(struct nodo));
+  if(*mcola == NULL){ //si la mcola no cuenta con ningún nodo, se creará el primero.
+    *mcola = malloc(sizeof(struct nodo));
     return;
   } else {
 
     struct nodo *temporal = malloc(sizeof(struct nodo));
     temporal -> dato = num;
-    temporal -> siguiente = *mipila;
-    *mipila = temporal;
+    temporal -> siguiente = *mcola;
+    *mcola = temporal;
 
   }
 
