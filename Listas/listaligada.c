@@ -10,7 +10,6 @@ void insertar_al_final(struct nodo **milista, int num);
 void mostrar(struct nodo *milista);
 void insertar_al_final(struct nodo **lista, int num);
 int numero_elementos(struct nodo *milista);
-void eliminar_al_final
 
 int main(int argc, char const *argv[]) {
 
