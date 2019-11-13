@@ -41,18 +41,12 @@ void insertar(struct nodo **milista, int x){
 struct nodo *nodotemporal = malloc(sizeof(struct nodo));
 struct nodo *ultimo = *milista;
 
-(**milista).siguiente
+//(**milista).siguiente
 
 nodotemporal -> dato = x;
 nodotemporal -> siguiente = NULL;
 
-	/*while(*(milista -> siguiente) != NULL){
-		**milista = *(milista -> siguiente);
-	}
-    //Preguntar por qué no funciona
-	*milista = nodotemporal;*/
-
-  while (uihycffctdxtszreaaretrydre -> siguiente != NULL){
+  while (ultimo -> siguiente != NULL){
 		ultimo = ultimo -> siguiente; // el bueno
   }
 
