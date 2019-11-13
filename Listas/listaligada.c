@@ -6,52 +6,52 @@ struct nodo{
   struct nodo *siguiente;
 };
 
-void insertar(struct nodo **milista, int num);
+void insertar_al_final(struct nodo **milista, int num);
 void mostrar(struct nodo *milista);
 void insertar_alprincipio(struct nodo **lista, int num);
-int tam(struct nodo *milista);
+int numero_elementos(struct nodo *milista);
 //void eliminar(struct nodo, int ) eliminar el último o una posición dada.
 
 int main(int argc, char const *argv[]) {
 
-  struct nodo *milista;
+  struct nodo *milista = NULL;
 
-	milista = malloc(sizeof(struct nodo));
-
-
-  insertar(&milista, 10);
-  insertar(&milista, 20);
-  insertar(&milista, 30);
-  insertar(&milista, 40);
-  insertar(&milista, 50);
+  insertar_al_final(&milista, 10);
+  insertar_al_final(&milista, 20);
+  insertar_al_final(&milista, 30);
+  insertar_al_final(&milista, 40);
+  insertar_al_final(&milista, 50);
 
   insertar_alprincipio(&milista, 60);
 
   mostrar(milista);
 
-  printf("La lista contiene: %d elementos\n",tam(milista));
+  printf("La lista contiene: %d elementos\n", numero_elementos(milista));
 
   return 0;
 }
 
-void insertar(struct nodo **milista, int num){
+void insertar_al_final(struct nodo **milista, int num){
 
   struct nodo *nodotemporal = malloc(sizeof(struct nodo));
   struct nodo *ultimo = *milista;
+
   nodotemporal -> dato = num;
   nodotemporal -> siguiente = NULL;
+
 	// Sí la lista no cuenta con ningún nodo, se creará el primero.
   if (*milista == NULL) {
-	   *ultimo = *nodotemporal;
+    *milista = nodotemporal;
 	return;
-}
-//(**milista).siguiente
+} else {
 
+  // Recorre toda la lista y liga el nodotemporal al final de la lista.
   while (ultimo -> siguiente != NULL){
-		ultimo = ultimo -> siguiente; // el bueno
+    ultimo = ultimo -> siguiente; // el bueno
   }
 
   ultimo -> siguiente = nodotemporal;
+}
 
 }
 
@@ -80,7 +80,7 @@ void insertar_alprincipio(struct nodo **lista, int num){
 
 }
 
-int tam(struct nodo *milista){
+int numero_elementos(struct nodo *milista){
 
   int tam = 0;
   while (milista != NULL) {
