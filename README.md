@@ -1,1 +1,1 @@
-# Estructuras
+# Implementaciones de algunas estructuras de datos.
