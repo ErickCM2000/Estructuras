@@ -9,6 +9,7 @@ struct nodo{
 void insertar(struct nodo **milista, int x);
 void mostrar(struct nodo *milista);
 void insertar_alprincipio(struct nodo **lista, int num);
+int tam_lista(struct nodo *milista);
 //void eliminar(struct nodo, int ) eliminar el último o una posición dada.
 
 int main(int argc, char const *argv[]) {
@@ -16,7 +17,7 @@ int main(int argc, char const *argv[]) {
   struct nodo *milista;
 
 	milista = malloc(sizeof(struct nodo));
-	milista -> dato = 3;
+	milista -> dato = 5;
 	milista -> siguiente = NULL;
 
   insertar(&milista, 10);
@@ -27,11 +28,12 @@ int main(int argc, char const *argv[]) {
 
   mostrar(milista);
 
+  printf("La lista contiene: %d elementos.\n",tam_lista(milista));
+  
   return 0;
 }
 
 void insertar(struct nodo **milista, int x){
-  if(milista==NULL)
 	// Sí la lista no cuenta con ningún nodo, se creará el primero.
   if (*milista == NULL) {
 	   *milista = malloc(sizeof(struct nodo));
@@ -77,4 +79,13 @@ void insertar_alprincipio(struct nodo **lista, int num){
 
   }
 
+}
+
+int tam_lista(struct nodo *milista){
+  int tam = 0;
+  while (milista != NULL) {
+    milista = milista -> siguiente;
+    ++tam;
+  }
+  return tam;
 }
