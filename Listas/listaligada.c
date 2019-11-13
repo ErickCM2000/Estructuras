@@ -65,9 +65,9 @@ void mostrar(struct nodo *milista){
 
 void insertar_al_final(struct nodo **lista, int num){
 
-  if(*lista == NULL){ //si la lista no cuenta con ningún nodo, se creará el primero.
-    *lista = malloc(sizeof(struct nodo));
-    return;
+  if (*milista == NULL) {
+    *milista = nodotemporal;
+	return;
   } else {
 
     struct nodo *temporal = malloc(sizeof(struct nodo));
