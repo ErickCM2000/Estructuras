@@ -9,21 +9,32 @@ struct nodo{
 void insertar_al_final(struct nodo **milista, int num);
 void mostrar(struct nodo *milista);
 void insertar_al_principio(struct nodo **lista, int num);
+void eliminar(struct nodo **milista, int posicion);
 int numero_elementos(struct nodo *milista);
 
 int main(int argc, char const *argv[]) {
 
   struct nodo *milista;
 
-  insertar_al_principio(&milista, 10);
-  insertar_al_principio(&milista, 20);
-  insertar_al_principio(&milista, 30);
-  insertar_al_principio(&milista, 40);
-  insertar_al_principio(&milista, 50);
+  insertar_al_final(&milista, 10);
+  insertar_al_final(&milista, 20);
+  insertar_al_final(&milista, 30);
+  insertar_al_final(&milista, 40);
+  insertar_al_final(&milista, 50);
 
   insertar_al_principio(&milista, 60);
+  insertar_al_principio(&milista, 70);
 
   mostrar(milista);
+
+  printf("La lista contiene: %d elementos\n", numero_elementos(milista));
+
+
+  eliminar(&milista, 3);
+  eliminar(&milista, 10);
+
+  mostrar(milista);
+
 
   printf("La lista contiene: %d elementos\n", numero_elementos(milista));
 
@@ -77,6 +88,39 @@ void insertar_al_principio(struct nodo **milista, int num){
     *milista = temporal;
 
   }
+
+}
+
+void eliminar(struct nodo **milista, int posicion){
+
+    if(*milista == NULL){
+      return;
+    }
+
+    struct nodo *temporal = *milista;
+
+    if(posicion == 0){
+
+      *milista = temporal -> siguiente;
+      free(temporal);
+
+    } else {
+
+      for(int i = 0; temporal != NULL && i < posicion - 1; i++){
+        temporal = temporal -> siguiente;
+      }
+
+      if(temporal == NULL || temporal -> siguiente == NULL){
+        return;
+      }
+
+      struct nodo *siguiente = temporal -> siguiente -> siguiente;
+
+      free(temporal -> siguiente);
+
+      temporal -> siguiente = siguiente;
+
+    }
 
 }
 
