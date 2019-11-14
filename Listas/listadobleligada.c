@@ -35,6 +35,7 @@ void insertar_al_final(struct nodo **milista, int num){
 
   struct nodo *ultimo = *milista;
 
+
   if(*milista == NULL){
     temporal -> anterior = NULL;
     *milista = temporal;
@@ -53,14 +54,14 @@ void insertar_al_final(struct nodo **milista, int num){
 void mostrar(struct nodo *milista){
 
   struct nodo *ultimo;
-  printf("Recorrido normal\n");
+  printf("Recorrido normal. \n");
   while(milista != NULL){
     printf("%d\n", milista -> dato);
-    ultimo = milista;
+    ultimo = milista; // ultimo se va posicionando hasta el final de la lista.
     milista = milista -> siguiente;
   }
 
-  printf("Recorrido normal\n");
+  printf("Recorrido al reves. \n");
   while(ultimo != NULL){
     printf("%d\n", ultimo -> dato);
     ultimo = ultimo -> anterior;
