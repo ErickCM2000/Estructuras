@@ -11,7 +11,7 @@ void push(struct nodo **mipila, int num);
 int pop(struct nodo **mipila);
 int top(struct nodo *mipila);
 
-int main(int argc, char const *argv[]) {
+int main(void) {
 
   struct nodo *mipila = NULL;
 
