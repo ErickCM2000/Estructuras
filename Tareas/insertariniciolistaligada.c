@@ -33,6 +33,10 @@ void insertar_al_principio(struct nodo **milista, int num){
   nodotemporal -> dato = num;
   nodotemporal -> siguiente = NULL;
 
+  if(milista == NULL){
+    return;
+  }
+
 	// Sí la lista no cuenta con ningún nodo, se creará el primero.
   if (*milista == NULL) {
     *milista = nodotemporal;
