@@ -7,59 +7,60 @@ struct nodo{
   struct nodo *siguiente;
 };
 
-void insertar_al_final(struct nodo **milista, int num);
+void insertaralprincipio(struct nodo **milista, int num);
+void insertaralprincipio(struct nodo **milista, int num);
 void mostrar(struct nodo *milista);
 
-int main(int argc, char const *argv[]) {
+int main(void) {
 
   struct nodo *milista = NULL;
 
-  insertar_al_final(&milista, 10);
-  insertar_al_final(&milista, 20);
-  insertar_al_final(&milista, 30);
-  insertar_al_final(&milista, 40);
-  insertar_al_final(&milista, 50);
-  insertar_al_final(&milista, 60);
+  insertaralprincipio(&milista, 10);
+  insertaralprincipio(&milista, 20);
+  insertaralprincipio(&milista, 30);
+  insertaralprincipio(&milista, 40);
+  insertaralprincipio(&milista, 50);
+  insertaralprincipio(&milista, 60);
 
   mostrar(milista);
 
   return 0;
 }
 
-void insertar_al_final(struct nodo **milista, int num){
+void insertaralprincipio(struct nodo **milista, int num){
 
   struct nodo *temporal = malloc(sizeof(struct nodo));
   temporal -> dato = num;
-  temporal -> anterior = *milista;
-  temporal -> siguiente = NULL;
+  temporal -> anterior = NULL;
+  temporal -> siguiente = *milista;
 
-  struct nodo *ultimo = *milista;
+  struct nodo *primero = *milista;
 
+  if(milista == NULL){
+    return;
+  }
 
   if(*milista == NULL){
     temporal -> anterior = NULL;
+    temporal -> siguiente = NULL;
     *milista = temporal;
-    return;
   } else {
 
-    while(ultimo -> siguiente != NULL){
-      ultimo = ultimo -> siguiente;
+    while(primero -> anterior != NULL){
+      primero = primero -> anterior;
     }
-    ultimo -> siguiente = temporal;
-    temporal -> anterior = ultimo;
+
+    primero -> anterior = temporal;
+    temporal -> siguiente = primero;
+
   }
 
 }
 
+
 void mostrar(struct nodo *milista){
 
   struct nodo *ultimo;
-  printf("Recorrido normal. \n");
-  while(milista != NULL){
-    printf("%d\n", milista -> dato);
-    ultimo = milista; // ultimo se va posicionando hasta el final de la lista.
-    milista = milista -> siguiente;
-  }
 
   printf("Recorrido al reves. \n");
   while(ultimo != NULL){
