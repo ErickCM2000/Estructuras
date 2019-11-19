@@ -1,4 +1,4 @@
-contigua.o: listacontigua.c
+listacontigua.o: listacontigua.c
 	gcc listacontigua.c -c
 main.o: main.c
 	gcc main.c -c
