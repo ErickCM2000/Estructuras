@@ -3,11 +3,11 @@ listaligada.o: listaligada.c
 main.o: main.c
 	gcc main.c -c
 
-a.out: main.o contigua.o
-	gcc main.o contigua.o
+a.out: main.o listaligada.o
+	gcc main.o listaligada.o
 
 run: a.out
 	./a.out
 
 clean:
-	rm -f *.o
+	rm -f *.o a.out

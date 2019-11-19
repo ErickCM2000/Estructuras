@@ -6,13 +6,13 @@ int main(void) {
 
   struct nodo *milista = NULL;
 
-  insertar_al_principio(&milista, 10);
-  insertar_al_principio(&milista, 20);
-  insertar_al_principio(&milista, 30);
-  insertar_al_principio(&milista, 40);
-  insertar_al_principio(&milista, 50);
-  insertar_al_principio(&milista, 60);
-  insertar_al_principio(&milista, 70);
+  insertaralprincipio(&milista, 10);
+  insertaralprincipio(&milista, 20);
+  insertaralprincipio(&milista, 30);
+  insertaralprincipio(&milista, 40);
+  insertaralprincipio(&milista, 50);
+  insertaralprincipio(&milista, 60);
+  insertaralprincipio(&milista, 70);
 
   mostrar(milista);
 

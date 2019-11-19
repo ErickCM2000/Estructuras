@@ -12,7 +12,7 @@ struct nodo{
 };
 
 void mostrar(struct nodo *milista);
-void insertar_al_principio(struct nodo **lista, int num);
+void insertaralprincipio(struct nodo **lista, int num);
 void eliminar(struct nodo **milista, int posicion);
 int numero_elementos(struct nodo *milista);
 

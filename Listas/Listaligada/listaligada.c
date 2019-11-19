@@ -11,7 +11,7 @@ void mostrar(struct nodo *milista){
 
 }
 
-void insertar_al_principio(struct nodo **milista, int num){
+void insertaralprincipio(struct nodo **milista, int num){
 
   struct nodo *temporal = malloc(sizeof(struct nodo));
   temporal -> dato = num;
