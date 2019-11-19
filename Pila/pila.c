@@ -7,52 +7,61 @@ struct nodo{
 };
 
 
-void push(struct nodo **pila, int num);
-int pop(struct nodo **pila);
-int top(struct nodo **pila);
+void push(struct nodo **mipila, int num);
+int pop(struct nodo **mipila);
+int top(struct nodo **mipila);
 
 int main(int argc, char const *argv[]) {
 
-  struct nodo *pila = NULL;
+  struct nodo *mipila = NULL;
 
-  push(&pila, 10);
-  push(&pila, 20);
-  push(&pila, 30);
-  push(&pila, 40);
-  push(&pila, 50);
+  push(&mipila, 10);
+  push(&mipila, 20);
+  push(&mipila, 30);
+  push(&mipila, 40);
+  push(&mipila, 50);
 
-  printf("El elemento eliminado es: %d\n", pop(&pila));
-  printf("El elemento a la cima de la pila es: %d\n", top(&pila));
+  printf("El elemento eliminado es: %d\n", pop(&mipila));
+  printf("El elemento a la cima de la pila es: %d\n", top(&mipila));
 
   return 0;
 }
 
-void push(struct nodo **pila, int num){
+void push(struct nodo **mipila, int num){
 
-  if(pila == NULL){
+  if(mipila == NULL){
     return;
   }
 
-  if(*pila == NULL){ //si la pila no cuenta con ningún nodo, se creará el primero.
-    *pila = malloc(sizeof(struct nodo));
+  if(*mipila == NULL){ //si la mipila no cuenta con ningún nodo, se creará el primero.
+    *mipila = malloc(sizeof(struct nodo));
     return;
   } else {
 
     struct nodo *temporal = malloc(sizeof(struct nodo));
     temporal -> dato = num;
-    temporal -> siguiente = *pila;
-    *pila = temporal;
+    temporal -> siguiente = *mipila;
+    *mipila = temporal;
 
   }
 
 }
 
-int pop(struct nodo **pila){
-  int valor = (**pila).dato;
+int pop(struct nodo **mipila){
+
+  int valor = (**mipila).dato;
+
+  struct nodo *temporal = *mipila;
+
+  *mipila = temporal -> siguiente;
+
+  free(temporal);
+
+
   return valor;
 }
 
-int top(struct nodo **pila){
-  int valor = (**pila).dato;
+int top(struct nodo **mipila){
+  int valor = (**mipila).dato;
   return valor;
 }
