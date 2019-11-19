@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "stdio.h"
+#include "stdlib.h"
 
 struct nodo{
   int dato;
@@ -9,7 +9,7 @@ struct nodo{
 
 void push(struct nodo **mipila, int num);
 int pop(struct nodo **mipila);
-int top(struct nodo **mipila);
+int top(struct nodo *mipila);
 
 int main(int argc, char const *argv[]) {
 
@@ -22,25 +22,31 @@ int main(int argc, char const *argv[]) {
   push(&mipila, 50);
 
   printf("El elemento eliminado es: %d\n", pop(&mipila));
-  printf("El elemento a la cima de la pila es: %d\n", top(&mipila));
+  printf("El elemento eliminado es: %d\n", pop(&mipila));
+  printf("El elemento eliminado es: %d\n", pop(&mipila));
+  printf("El elemento eliminado es: %d\n", pop(&mipila));
+
+
+  printf("El elemento a la cima de la pila es: %d\n", top(mipila));
 
   return 0;
 }
 
 void push(struct nodo **mipila, int num){
 
+  struct nodo *temporal = malloc(sizeof(struct nodo));
+  temporal -> dato = num;
+  temporal -> siguiente = *mipila;
+
   if(mipila == NULL){
     return;
   }
 
-  if(*mipila == NULL){ //si la mipila no cuenta con ningún nodo, se creará el primero.
-    *mipila = malloc(sizeof(struct nodo));
+  if(*mipila == NULL){
+    *mipila = temporal;
     return;
   } else {
 
-    struct nodo *temporal = malloc(sizeof(struct nodo));
-    temporal -> dato = num;
-    temporal -> siguiente = *mipila;
     *mipila = temporal;
 
   }
@@ -48,6 +54,7 @@ void push(struct nodo **mipila, int num){
 }
 
 int pop(struct nodo **mipila){
+
 
   int valor = (**mipila).dato;
 
@@ -61,7 +68,7 @@ int pop(struct nodo **mipila){
   return valor;
 }
 
-int top(struct nodo **mipila){
-  int valor = (**mipila).dato;
+int top(struct nodo *mipila){
+  int valor = (*mipila).dato;
   return valor;
 }
