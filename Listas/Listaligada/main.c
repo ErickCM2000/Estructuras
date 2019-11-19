@@ -4,7 +4,7 @@
 
 int main(void) {
 
-  struct nodo *milista = NULL;
+  struct ListaLigada *milista = NULL;
 
   insertaralprincipio(&milista, 10);
   insertaralprincipio(&milista, 20);

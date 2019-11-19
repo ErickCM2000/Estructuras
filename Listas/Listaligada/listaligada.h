@@ -6,14 +6,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct nodo{
+struct ListaLigada{
   int dato;
-  struct nodo *siguiente;
+  struct ListaLigada *siguiente;
 };
 
-void mostrar(struct nodo *milista);
-void insertaralprincipio(struct nodo **lista, int num);
-void eliminar(struct nodo **milista, int posicion);
-int numero_elementos(struct nodo *milista);
+void mostrar(struct ListaLigada *milista);
+void insertaralprincipio(struct ListaLigada **lista, int num);
+void eliminar(struct ListaLigada **milista, int posicion);
+int numero_elementos(struct ListaLigada *milista);
 
 #endif

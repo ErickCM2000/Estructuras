@@ -10,6 +10,7 @@ struct nodo{
 void push(struct nodo **mipila, int num);
 int pop(struct nodo **mipila);
 int top(struct nodo *mipila);
+void mostrarpila(struct nodo **mipila);
 
 int main(void) {
 
@@ -56,6 +57,8 @@ void push(struct nodo **mipila, int num){
 int pop(struct nodo **mipila){
 
 
+
+
   int valor = (**mipila).dato;
 
   struct nodo *temporal = *mipila;
@@ -71,4 +74,11 @@ int pop(struct nodo **mipila){
 int top(struct nodo *mipila){
   int valor = (*mipila).dato;
   return valor;
+}
+
+void mostrarpila(struct nodo **mipila){
+
+  while(mipila != NULL){
+      printf("%d\n", pop(&mipila));
+  }
 }

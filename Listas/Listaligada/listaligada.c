@@ -2,7 +2,7 @@
 
 #include "listaligada.h"
 
-void mostrar(struct nodo *milista){
+void mostrar(struct ListaLigada *milista){
 
   while (milista != NULL) {
     printf("%d\n", milista -> dato);
@@ -11,9 +11,9 @@ void mostrar(struct nodo *milista){
 
 }
 
-void insertaralprincipio(struct nodo **milista, int num){
+void insertaralprincipio(struct ListaLigada **milista, int num){
 
-  struct nodo *temporal = malloc(sizeof(struct nodo));
+  struct ListaLigada *temporal = malloc(sizeof(struct ListaLigada));
   temporal -> dato = num;
   temporal -> siguiente = *milista;
 
@@ -28,13 +28,13 @@ void insertaralprincipio(struct nodo **milista, int num){
 
 }
 
-void eliminar(struct nodo **milista, int posicion){
+void eliminar(struct ListaLigada **milista, int posicion){
 
     if(*milista == NULL){
       return;
     }
 
-    struct nodo *temporal = *milista;
+    struct ListaLigada *temporal = *milista;
 
     if(posicion == 0){
 
@@ -51,7 +51,7 @@ void eliminar(struct nodo **milista, int posicion){
         return;
       }
 
-      struct nodo *siguiente = temporal -> siguiente -> siguiente;
+      struct ListaLigada *siguiente = temporal -> siguiente -> siguiente;
 
       free(temporal -> siguiente);
 
@@ -61,7 +61,7 @@ void eliminar(struct nodo **milista, int posicion){
 
 }
 
-int numero_elementos(struct nodo *milista){
+int numero_elementos(struct ListaLigada *milista){
 
   int tam = 0;
   while (milista != NULL) {

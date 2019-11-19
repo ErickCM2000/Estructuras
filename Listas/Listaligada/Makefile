@@ -1,7 +1,7 @@
 listaligada.o: listaligada.c
-	gcc listaligada.c -c
+	gcc listaligada.c -c -Wall
 main.o: main.c
-	gcc main.c -c
+	gcc main.c -c -Wall
 
 a.out: main.o listaligada.o
 	gcc main.o listaligada.o
