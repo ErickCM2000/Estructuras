@@ -24,11 +24,13 @@ int main(void) {
   push(&mipila, 40);
   push(&mipila, 50);
 
-/*  printf("El elemento eliminado es: %d\n", pop(&mipila));
+  printf("El elemento eliminado es: %d\n", pop(&mipila));
+  printf("El elemento eliminado es: %d\n", pop(&mipila));
   printf("El elemento eliminado es: %d\n", pop(&mipila));
   printf("El elemento eliminado es: %d\n", pop(&mipila));
 
-  printf("El elemento a la cima de la pila es: %d\n", top(mipila));*/
+
+  printf("El elemento a la cima de la pila es: %d\n", top(mipila));
 
   mostrarpila(&mipila);
 
@@ -58,15 +60,9 @@ void push(struct nodo **mipila, int num){
 
 int pop(struct nodo **mipila){
 
-  /*if(*mipila == NULL){
-    return INT_MIN; No sirve esto jajaja
-  }*/
-
-
   if(*mipila == NULL){
-    return errno;
+    exit(1);
   }
-
 
   int valor = (**mipila).dato;
 
@@ -81,6 +77,11 @@ int pop(struct nodo **mipila){
 }
 
 int top(struct nodo *mipila){
+
+  if(mipila == NULL){
+    exit(1);
+  }
+
   int valor = (*mipila).dato;
   return valor;
 }
