@@ -1,5 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
+#include "limits.h"
+#include "errno.h"
 
 struct nodo{
   int dato;
@@ -22,13 +24,13 @@ int main(void) {
   push(&mipila, 40);
   push(&mipila, 50);
 
-  printf("El elemento eliminado es: %d\n", pop(&mipila));
-  printf("El elemento eliminado es: %d\n", pop(&mipila));
+/*  printf("El elemento eliminado es: %d\n", pop(&mipila));
   printf("El elemento eliminado es: %d\n", pop(&mipila));
   printf("El elemento eliminado es: %d\n", pop(&mipila));
 
+  printf("El elemento a la cima de la pila es: %d\n", top(mipila));*/
 
-  printf("El elemento a la cima de la pila es: %d\n", top(mipila));
+  mostrarpila(&mipila);
 
   return 0;
 }
@@ -56,7 +58,14 @@ void push(struct nodo **mipila, int num){
 
 int pop(struct nodo **mipila){
 
+  /*if(*mipila == NULL){
+    return INT_MIN; No sirve esto jajaja
+  }*/
 
+
+  if(*mipila == NULL){
+    return errno;
+  }
 
 
   int valor = (**mipila).dato;
@@ -77,8 +86,7 @@ int top(struct nodo *mipila){
 }
 
 void mostrarpila(struct nodo **mipila){
-
   while(mipila != NULL){
-      printf("%d\n", pop(&mipila));
+    printf("%d\n", pop(mipila) );
   }
 }
