@@ -1,6 +1,6 @@
 // Aquí van las instrucciones del programa
 
-#include "listaligada.h"
+#include "cola.h"
 
 int main(void) {
 

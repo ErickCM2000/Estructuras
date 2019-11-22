@@ -1,6 +1,6 @@
 // Aquí van las implementaciones de las funciones declaradas
 
-#include "listaligada.h"
+#include "cola.h"
 
 void mostrar(struct Cola **mcola){
 
