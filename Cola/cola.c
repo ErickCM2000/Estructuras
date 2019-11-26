@@ -4,7 +4,7 @@
 
 void mostrar(struct Cola **mcola){
 
-  while (mcola != NULL) {
+  while ((*mcola) != NULL) {
     printf("%d\n", eliminar(mcola));
   }
 
