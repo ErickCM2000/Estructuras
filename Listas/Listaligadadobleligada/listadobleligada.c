@@ -1,31 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
+// Aquí van las implementaciones de las funciones declaradas
 
-struct nodo{
-  int dato;
-  struct nodo *anterior;
-  struct nodo *siguiente;
-};
-
-void insertaralprincipio(struct nodo **milista, int num);
-void insertaralprincipio(struct nodo **milista, int num);
-void mostrar(struct nodo *milista);
-
-int main(void) {
-
-  struct nodo *milista = NULL;
-
-  insertaralprincipio(&milista, 10);
-  insertaralprincipio(&milista, 20);
-  insertaralprincipio(&milista, 30);
-  insertaralprincipio(&milista, 40);
-  insertaralprincipio(&milista, 50);
-  insertaralprincipio(&milista, 60);
-
-  mostrar(milista);
-
-  return 0;
-}
+#include "listadobleligada.h"
 
 void insertaralprincipio(struct nodo **milista, int num){
 
@@ -58,14 +33,25 @@ void insertaralprincipio(struct nodo **milista, int num){
 }
 
 
-void mostrar(struct nodo *milista){
+void mostraralreves(struct nodo *milista){
 
-  struct nodo *ultimo;
+  struct nodo *ultimo = milista;
 
   printf("Recorrido al reves. \n");
   while(ultimo != NULL){
     printf("%d\n", ultimo -> dato);
     ultimo = ultimo -> anterior;
+  }
+
+}
+
+void mostrarnormal(struct nodo *milista){
+
+  while(milista != NULL){
+      printf("Recorrido normal\n");
+      printf("%d\n", milista -> dato);
+      milista = milista -> siguiente;
+
   }
 
 }
