@@ -1,28 +1,56 @@
 #include "pila.h"
 
-int main(void) {
+void push(struct Pila **mipila, int num){
 
-  struct Pila *mipila = NULL;
+  struct Pila *temporal = malloc(sizeof(struct Pila));
+  temporal -> dato = num;
+  temporal -> siguiente = *mipila;
 
-  push(&mipila, 10);
-  push(&mipila, 20);
-  push(&mipila, 30);
-  push(&mipila, 40);
-  push(&mipila, 50);
-  push(&mipila, 60);
-  push(&mipila, 70);
-  push(&mipila, 80);
-  push(&mipila, 90);
+  if(mipila == NULL){
+    return;
+  }
 
-  printf("El elemento eliminado es: %d\n", pop(&mipila));
-  printf("El elemento eliminado es: %d\n", pop(&mipila));
-  printf("El elemento eliminado es: %d\n", pop(&mipila));
-  printf("El elemento eliminado es: %d\n", pop(&mipila));
+  if(*mipila == NULL){
+    *mipila = temporal;
+    return;
+  } else {
+
+    *mipila = temporal;
+
+  }
+
+}
+
+int pop(struct Pila **mipila){
+
+  if(*mipila == NULL){
+    exit(1);
+  }
+
+  int valor = (**mipila).dato;
+
+  struct Pila *temporal = *mipila;
+
+  *mipila = temporal -> siguiente;
+
+  free(temporal);
 
 
-  printf("El elemento a la cima de la pila es: %d\n", top(mipila));
+  return valor;
+}
 
-  mostrarpila(&mipila);
+int top(struct Pila *mipila){
 
-  return 0;
+  if(mipila == NULL){
+    exit(1);
+  }
+
+  int valor = (*mipila).dato;
+  return valor;
+}
+
+void mostrarpila(struct Pila **mipila){
+  while(*mipila != NULL){
+    printf("%d\n", pop(mipila) );
+  }
 }
