@@ -4,14 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct nodo{
+struct ListaContigua{
   int *datos;
   int actual;
   int cuantos;
 };
 
-void insertar (struct nodo **, int);
-void eliminar (struct nodo **, int);
-void mostrar (struct nodo *);
+void insertar (struct ListaContigua **, int);
+void eliminar (struct ListaContigua **, int);
+void mostrar (struct ListaContigua *);
 
 #endif

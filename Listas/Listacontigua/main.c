@@ -1,19 +1,23 @@
 #include "listacontigua.h"
 
-int main(void) {
-  
-  struct nodo *lista = NULL;
+int main(void){
 
-  insertar (&lista, 1);
-  insertar (&lista, 2);
-  insertar (&lista, 3);
-  insertar (&lista, 4);
-  insertar (&lista, 5);
+  struct ListaContigua *lista = NULL;
 
-  mostrar (lista);
+  insertar (&lista, 10);
+  insertar (&lista, 20);
+  insertar (&lista, 30);
+  insertar (&lista, 40);
+  insertar (&lista, 50);
+  insertar (&lista, 60);
+  insertar (&lista, 70);
+  insertar (&lista, 80);
+  insertar (&lista, 90);
 
-  eliminar (&lista, 4);
-  eliminar (&lista, 5);
+  eliminar (&lista, 10);
+  eliminar (&lista, 70);
+  eliminar (&lista, 90);
+
 
   mostrar (lista);
 
