@@ -1,6 +1,7 @@
 #include "listacontigua.h"
 
-void insertar (struct ListaContigua **lista, int dato){
+void
+insertar (struct ListaContigua **lista, int dato){
 
   int *temporal = NULL;
   int i = 0;
@@ -47,7 +48,8 @@ void insertar (struct ListaContigua **lista, int dato){
   *((*lista)->datos + (*lista)->actual) = dato;
 }
 
-void eliminar (struct ListaContigua **lista, int dato){
+void
+ eliminar (struct ListaContigua **lista, int dato){
   int i = 0;
   int *temporal = NULL;
   if (lista == NULL)
@@ -94,7 +96,8 @@ void eliminar (struct ListaContigua **lista, int dato){
 
 }
 
-void mostrar (struct ListaContigua *lista)
+void
+ mostrar (struct ListaContigua *lista)
 {
   int i = 0;
   if (lista == NULL)

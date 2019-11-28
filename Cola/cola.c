@@ -2,7 +2,8 @@
 
 #include "cola.h"
 
-void mostrar(struct Cola **mcola){
+void
+ mostrar(struct Cola **mcola){
 
   while ((*mcola) != NULL) {
     printf("%d\n", eliminar(mcola));
@@ -10,7 +11,8 @@ void mostrar(struct Cola **mcola){
 
 }
 
-void insertar(struct Cola **mcola, int num){
+void
+insertar(struct Cola **mcola, int num){
 
   struct Cola *nodotemporal = malloc(sizeof(struct Cola));
   struct Cola *ultimo = *mcola;
@@ -34,7 +36,8 @@ void insertar(struct Cola **mcola, int num){
 
 }
 
-int eliminar(struct Cola **mcola){
+int
+eliminar(struct Cola **mcola){
 
     if(*mcola == NULL){
       exit(1);

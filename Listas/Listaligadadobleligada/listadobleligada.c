@@ -2,7 +2,8 @@
 
 #include "listadobleligada.h"
 
-void insertaralprincipio(struct nodo **milista, int num){
+void
+insertaralprincipio(struct nodo **milista, int num){
 
   struct nodo *temporal = malloc(sizeof(struct nodo));
   temporal -> dato = num;
@@ -33,7 +34,8 @@ void insertaralprincipio(struct nodo **milista, int num){
 }
 
 
-void mostraralreves(struct nodo *milista){
+void
+ mostraralreves(struct nodo *milista){
 
   struct nodo *ultimo = milista;
 
@@ -45,7 +47,8 @@ void mostraralreves(struct nodo *milista){
 
 }
 
-void mostrarnormal(struct nodo *milista){
+void
+mostrarnormal(struct nodo *milista){
 
   while(milista != NULL){
       printf("Recorrido normal\n");

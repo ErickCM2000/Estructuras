@@ -1,6 +1,7 @@
 #include "insertarfinal.h"
 
-void insertaralfinal(struct ListaLigada **milista, int num){
+void
+ insertaralfinal(struct ListaLigada **milista, int num){
 
   struct ListaLigada *temporal = malloc(sizeof(struct ListaLigada));
   struct ListaLigada *ultimo = *milista;
@@ -24,7 +25,8 @@ void insertaralfinal(struct ListaLigada **milista, int num){
 
 }
 
-void mostrar(struct ListaLigada *milista){
+void
+mostrar(struct ListaLigada *milista){
 
   while (milista != NULL) {
     printf("%d\n", milista -> dato);

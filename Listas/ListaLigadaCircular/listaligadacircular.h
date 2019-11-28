@@ -14,6 +14,6 @@ struct ListaLigada{
 void mostrar(struct ListaLigada *milista);
 void insertaralprincipio(struct ListaLigada **lista, int num);
 void eliminar(struct ListaLigada **milista, int posicion);
-int numero_elementos(struct ListaLigada *milista);
+int numelementos(struct ListaLigada *milista);
 
 #endif

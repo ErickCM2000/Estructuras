@@ -16,7 +16,7 @@ int main(void) {
 
   mostrar(milista);
 
-  printf("La lista contiene: %d elementos\n", numero_elementos(milista));
+  printf("La lista contiene: %d elementos\n", numelementos(milista));
 
   return 0;
 }

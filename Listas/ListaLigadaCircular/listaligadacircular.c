@@ -2,7 +2,8 @@
 
 #include "listaligadacircular.h"
 
-void mostrar(struct ListaLigada *milista){
+void
+ mostrar(struct ListaLigada *milista){
 
   struct ListaLigada *temporal = milista;
 
@@ -17,7 +18,8 @@ void mostrar(struct ListaLigada *milista){
 
 }
 
-void insertaralprincipio(struct ListaLigada **milista, int num){
+void
+ insertaralprincipio(struct ListaLigada **milista, int num){
 
   struct ListaLigada *ultimo = malloc(sizeof(struct ListaLigada));
   struct ListaLigada *temporal = *milista;
@@ -44,7 +46,8 @@ void insertaralprincipio(struct ListaLigada **milista, int num){
 
 }
 
-void eliminar(struct ListaLigada **milista, int posicion){
+void
+eliminar(struct ListaLigada **milista, int posicion){
 
     if(*milista == NULL){
       return;
@@ -77,7 +80,8 @@ void eliminar(struct ListaLigada **milista, int posicion){
 
 }
 
-int numero_elementos(struct ListaLigada *milista){
+int
+numelementos(struct ListaLigada *milista){
 
   int tam = 0;
   while (milista != NULL) {

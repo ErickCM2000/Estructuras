@@ -1,6 +1,7 @@
 #include "pila.h"
 
-void push(struct Pila **mipila, int num){
+void
+ push(struct Pila **mipila, int num){
 
   struct Pila *temporal = malloc(sizeof(struct Pila));
   temporal -> dato = num;
@@ -21,7 +22,8 @@ void push(struct Pila **mipila, int num){
 
 }
 
-int pop(struct Pila **mipila){
+int
+ pop(struct Pila **mipila){
 
   if(*mipila == NULL){
     exit(1);
@@ -39,7 +41,8 @@ int pop(struct Pila **mipila){
   return valor;
 }
 
-int top(struct Pila *mipila){
+int
+top(struct Pila *mipila){
 
   if(mipila == NULL){
     exit(1);
@@ -49,7 +52,8 @@ int top(struct Pila *mipila){
   return valor;
 }
 
-void mostrarpila(struct Pila **mipila){
+void
+ mostrarpila(struct Pila **mipila){
   while(*mipila != NULL){
     printf("%d\n", pop(mipila) );
   }
