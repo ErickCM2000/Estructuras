@@ -1,1 +1,1 @@
-# Implementaciones de algunas estructuras de datos.
+# Implementaciones en C de algunas de las estructuras de datos más comunes.
