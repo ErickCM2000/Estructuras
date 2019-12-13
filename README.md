@@ -1,8 +1,8 @@
-## Estructuras de datos
+# Estructuras de datos
 
 Repositorio algunas de las estructuras de datos más comunes, implementadas en C.
 
-# Incluye las estructuras:
+## Incluye las estructuras:
 
 Listas (contigua y ligada)
 Pila
