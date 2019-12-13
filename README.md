@@ -4,12 +4,12 @@ Repositorio algunas de las estructuras de datos más comunes, implementadas en C
 
 ## Incluye las estructuras:
 
-* *Listas (contigua y ligada)
+* Listas (contigua y ligada)
 
-*Pila
+* Pila
 
-*Cola
+* Cola
 
-*Tabla Hash (Cerrado y Abierto)
+* Tabla Hash (Cerrado y Abierto)
 
-*Árboles (ABB y AVL)
+* Árboles (ABB y AVL)
