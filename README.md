@@ -3,13 +3,13 @@
 Repositorio algunas de las estructuras de datos más comunes, implementadas en C.
 
 ## Incluye las estructuras:
-```
-* **Listas (contigua y ligada)** *
 
-Pila
+*Listas (contigua y ligada)
 
-Cola
+*Pila
 
-Tabla Hash (Cerrado y Abierto)
+*Cola
 
-Árboles (ABB y AVL)
+*Tabla Hash (Cerrado y Abierto)
+
+*Árboles (ABB y AVL)
