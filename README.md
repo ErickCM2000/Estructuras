@@ -4,7 +4,7 @@ _Repositorio algunas de las estructuras de datos más comunes, implementadas en 
 
 ## Incluye las estructuras:
 
-* Listas **(contigua y ligada)
+* Listas **(contigua y ligada) **
 
 * Pila
 
