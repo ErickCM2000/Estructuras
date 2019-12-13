@@ -1,4 +1,4 @@
-### Estructuras de datos
+## Estructuras de datos
 
 Repositorio algunas de las estructuras de datos más comunes, implementadas en C.
 
