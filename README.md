@@ -1,6 +1,6 @@
 # Estructuras de datos 🚀
 
-Repositorio algunas de las estructuras de datos más comunes, implementadas en C.
+_Repositorio algunas de las estructuras de datos más comunes, implementadas en C._
 
 ## Incluye las estructuras:
 
