@@ -1,17 +1,13 @@
 # Estructuras de datos 🚀
 
-_Repositorio algunas de las estructuras de datos más comunes, implementadas en C._
+_Repositorio con implementaciones de estructuras de datos._
 
+
+Self
+
+Implementaciones hechas por mí.
+
+Curso ESCOM
+
+Implementaciones durante el curso de estructuras de datos en ESCOM.
 Maestro del curso: Norman Rafael Saucedo Delgado
-
-## Incluye las estructuras:
-
-* Listas **(contigua y ligada)**
-
-* Pila
-
-* Cola
-
-* Tabla Hash **(Cerrado y Abierto)**
-
-* Árboles **(ABB y AVL)**
